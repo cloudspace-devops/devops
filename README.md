@@ -17,10 +17,11 @@ Be sure to install Virtualbox and Vagrant before you begin.  If you haven't setu
 To test your development environment, do the following:
 
 1. Get a test project: `go get github.com/cloudspace/microservice-url-lengthener-go`
-2. Change directory into the project: `cd /srv/go/src/github/cloudspace/microservice-url-lengthener-go`
-3. Build the go file without any dependencies: `CGO_ENABLED=0 go build -a -ldflags '-s' lengthener.go`
-4. Verify the binary is completely static (should show “not a dynamic executable”): `ldd binaryfile`
-5. Build a a Docker image to run your binary: `docker build -t cloudspace/url-lengthener .`
-6. Test the Docker image you created:  `docker run -ti cloudspace/url-lengthener http://tinyurl.com/testurl`
+2. Change directory into the project: `cd /srv/go/src/github.com/cloudspace/microservice-url-lengthener-go/`
+3. Remove the old lengthener binary: `rm lengthener`
+4. Build the go file without any dependencies: `CGO_ENABLED=0 go build -a -ldflags '-s' lengthener.go`
+5. Verify the binary is completely static (should show “not a dynamic executable”): `ldd lengthener`
+6. Build a a Docker image to run your binary: `docker build -t cloudspace/url-lengthener .`
+7. Test the Docker image you created:  `docker run -ti cloudspace/url-lengthener http://tinyurl.com/testurl`
 
 If all went well, this should return the lengthened url for the short url you passed in.
