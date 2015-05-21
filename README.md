@@ -7,9 +7,9 @@ Be sure to install Virtualbox and Vagrant before you begin.  If you haven't setu
 
 1. Clone this repo into a folder inside your workspace: `git clone git@github.com:cloudspace-devops/devops.git`
 2. If you are going to be doing packer or go development, run the following in the root of your workspace directory:
- - `git clone git@github.com:cloudspace-devops/packer-image-scripts.git`
- - `git clone git@github.com:cloudspace-devops/packer-shell-scripts.git`
- - `mkdir go; mkdir go/bin; mkdir go/pkg; mkdir go/src; mkdir go/src/github.com;`
+ - `make packer-image-scripts`
+ - `make packer-shell-scripts`
+ - `make go`
 3. If you are using a workspace other than /srv, update the $workspace variable inside the Vagrantfile to match your workspace location.
 4. Start the virtual machine by running `vagrant up` in the root of the project.
 5. SSH into your virtual machine by running `vagrant ssh`, also in the root of the project.
